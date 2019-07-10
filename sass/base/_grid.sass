@@ -1,0 +1,77 @@
+// Sassimi grid // ------------------------------------------------- //
+
+.wrapper
+    width: 100%
+    margin-right: auto
+    margin-left: auto
+
+@each $breakpoint, $media in $breackpoints
+	@media (min-width: #{$media})
+        .wrapper
+            max-width: calc(#{$media})
+
+.grid, .grid--nogutters
+    display: flex
+    display: -ms-flexbox
+    flex-wrap: wrap
+    -ms-flex-wrap: wrap
+
+.grid .grid
+    margin-right: -$column-gutter/2
+    margin-left: -$column-gutter/2
+
+.grid--nogutters .grid
+    margin: 0
+
+.column
+    position: relative
+    flex-grow: 1
+    width: 100%
+    max-width: 100%
+    padding-right: $column-gutter/2
+    padding-left: $column-gutter/2
+
+// DOC: .grid--nogutters Esta classe se usa para quitar el intercolumnado //
+.grid--nogutters>.column
+    padding-right: 0
+    padding-left: 0
+
+@each $size in $sizes
+    @if $size == 33
+        .w#{$size}
+            -ms-flex: 0 0 33.33334%
+            flex: 0 0 33.33334%
+            max-width: 33.33334%
+
+    @else if $size == 66
+        .w#{$size}
+            -ms-flex: 0 0 66.66667%
+            flex: 0 0 66.66667%
+            max-width: 66.66667%
+
+    @else
+        .w#{$size}
+            -ms-flex: 0 0 #{$size * 1%}
+            flex: 0 0 #{$size * 1%}
+            max-width: #{$size * 1%}
+
+@each $breakpoint, $media in $breackpoints
+	@media (min-width: #{$media})
+        @each $size in $sizes
+            @if $size == 33
+                .#{$breakpoint}_w#{$size}
+                    -ms-flex: 0 0 33.33334%
+                    flex: 0 0 33.33334%
+                    max-width: 33.33334%
+
+            @else if $size == 66
+                .#{$breakpoint}_w#{$size}
+                    -ms-flex: 0 0 66.66667%
+                    flex: 0 0 66.66667%
+                    max-width: 66.66667%
+
+            @else
+                .#{$breakpoint}_w#{$size}
+                    -ms-flex: 0 0 #{$size * 1%}
+                    flex: 0 0 #{$size * 1%}
+                    max-width: #{$size * 1%}

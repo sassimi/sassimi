@@ -1,0 +1,118 @@
+// Sassimi text // -------------------------------------------- //
+
+html, body
+    font-family: $font-family
+    font-size: $font-size
+    line-height: $line-height
+
+p
+    font-family: $paragraph-font-family
+    font-size: $paragraph-font-size
+    font-weight: $paragraph-font-weight
+    margin: $paragraph-margin
+    color: $color-text
+
+small
+    font-size: $small-font-size
+
+strong
+    font-family: $bold-font-family
+    font-size: $font-size
+    font-weight: $bold-font-weight
+    
+em
+    font-family: $em-font-family
+    font-size: $font-size
+    margin: $em-margin
+
+a
+    font-size: $font-size
+    color: $link-color
+    text-decoration: $link-text-decoration
+
+    &:hover
+        color: $link-color-hover
+        text-decoration: $link-text-decoration-hover
+
+ul
+    margin: $list-margin
+    
+    li:before
+        content: $list-symbol
+        color: $list-symbol-color
+
+ol
+    margin: $list-margin
+    counter-reset: my-counter
+
+    li:before
+        content: counter(my-counter)'. '
+        counter-increment: my-counter
+        color: $list-symbol-color
+        
+
+h1, .h1
+    font-family: $h1-font-family
+    font-size: $h1-font-size
+    margin: $h1-margin
+    color: $h1-color
+    line-height: $h1-line-height
+
+h2, .h2
+    font-family: $h2-font-family
+    font-size: $h2-font-size
+    margin: $h2-margin
+    color: $h2-color
+    line-height: $h2-line-height
+
+h3, .h3
+    font-family: $h3-font-family
+    font-size: $h3-font-size
+    margin: $h3-margin
+    color: $h3-color
+    line-height: $h3-line-height
+
+h4, .h4
+    font-family: $h4-font-family
+    font-size: $h4-font-size
+    margin: $h4-margin
+    color: $h4-color
+    line-height: $h4-line-height
+
+h5, .h5
+    font-family: $h5-font-family
+    font-size: $h5-font-size
+    margin: $h5-margin
+    color: $h5-color
+    line-height: $h5-line-height
+
+h6, .h6
+    font-family: $h6-font-family
+    font-size: $h6-font-size
+    margin: $h6-margin
+    color: $h6-color
+    line-height: $h6-line-height
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child
+    margin-top: 0
+
+blockquote
+    font-family: $blockquote-font-family
+    font-size: $blockquote-font-size
+    margin: $blockquote-margin
+
+mark
+    font-size: $font-size
+    background: $mark-bg
+
+hr
+    border: 0
+    margin: $hr-margin
+    height: $hr-height
+    background: $hr-bg
+    

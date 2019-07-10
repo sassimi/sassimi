@@ -1,0 +1,36 @@
+// Sassimi helpers text // ----------------------------------------- //
+
+// Alignament //
+.ta-center
+    text-align: center
+
+.ta-left
+    text-align: left
+
+.ta-right
+    text-align: right
+ 
+@each $breakpoint, $media in $breackpoints
+	@media (min-width: #{$media})
+        .#{$breakpoint}_ta-center
+            text-align: center
+
+        .#{$breakpoint}_ta-left
+            text-align: left
+
+        .#{$breakpoint}_ta-right
+            text-align: right
+
+// Lists //
+.list--float
+    display: flex
+
+    li:not(.last-child)
+        margin-right: 1em
+
+    li:before
+        content: ''
+
+.list--nostyle
+    li:before
+        content: ''
