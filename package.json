@@ -1,0 +1,48 @@
+{
+  "name": "sassimi",
+  "version": "0.0.0",
+  "author": {
+    "name": "Albert Escamilla"
+  },
+  "description": "Sass framework to turn your websites into yummy websites.",
+  "main": "sass/sassimi.sass",
+  "unpkg": "dist/sassimi.css",
+  "style": "dist/css/sassimi.min.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sassimi/sassimi.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "framework"
+  ],
+  "bugs": {
+    "url": "https://github.com/sassimi/sassimi/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.12.0",
+    "postcss-cli": "^6.1.2",
+    "rimraf": "^2.6.3"
+  },
+  "scripts": {
+    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
+    "build-autoprefix": "postcss --use autoprefixer --map false --output dist/sassimi.css dist/sassimi.css",
+    "build-cleancss": "cleancss -o dist/sassimi.min.css dist/sassimi.css",
+    "build-clean": "rimraf css",
+    "build-sass": "node-sass --output-style expanded --source-map true sass/sassimi.sass dist/sassimi.css",
+    "start": "npm run build-sass -- --watch"
+  },
+  "files": [
+    "css",
+    "sass",
+    "sass/sassimi.sass",
+    "LICENSE",
+    "README.md"
+  ]
+}
